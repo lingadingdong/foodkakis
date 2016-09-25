@@ -10,14 +10,22 @@
 %body
   %header
     .wrapper.clearfix
-      #logo= link_to "FoodKakis", root_path
+      #logo
+        = link_to root_path do
+          = image_tag '/assets/home.png', width: 50, height: 50, alt: 'FoodKakis'
       %nav
         - if user_signed_in?
-          = link_to current_user.name, edit_user_registration_path
-          = link_to "Add New Lobang!", new_post_path, class: "button"
+          = link_to new_post_path do
+            = image_tag '/assets/idea.png', width: 50, height: 50, alt: "Share the lobang!"
+          = link_to edit_user_registration_path do
+            = image_tag '/assets/user.png', width: 50, height: 50, alt: current_user.name
+          = link_to destroy_user_session_path, method: :delete do
+            = image_tag '/assets/logout.png', width: 50, height: 50, alt: "logout"
+
         - else
-          = link_to "Sign in", new_user_session_path
-          = link_to "Sign Up", new_user_registration_path, class: "button"
+          = link_to new_user_session_path do
+            = image_tag '/assets/user.png', width: 50, height: 50, alt: "Sign In"
+
   %p.notice= notice
   %p.alert= alert
   .wrapper
