@@ -24,7 +24,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -82,6 +82,17 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.paperclip_defaults = {
+    :storage => :fog,
+        :fog_directory => "foodkakis",
+    :fog_credentials => {
+      :provider => 'AWS',
+      :region => 'us-west-2',
+     
+      :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
