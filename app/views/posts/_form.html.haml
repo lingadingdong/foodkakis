@@ -1,8 +1,18 @@
 = simple_form_for(@post, multipart: true) do |f|
-	= f.input :image
-	= f.input :title
-	= f.input :address
-	= f.input :tag_list
-	= f.input :description
-
-	= f.button :submit
+.field
+  = f.label :image
+  = f.file_field :image
+.field
+  = f.label :title
+  = f.text_field :title
+.field
+  = f.label :address
+  = f.text_field :address
+.field
+  = f.label :tag_list
+  = f.text_field :tag_list
+.field
+  = f.label :description
+  = f.text_area :description
+.actions
+  = f.submit
