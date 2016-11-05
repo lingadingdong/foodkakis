@@ -69,8 +69,6 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
-    font-awesome-sass (4.7.0)
-      sass (>= 3.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -131,6 +129,11 @@ GEM
       nokogiri (~> 1.6.0)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -196,7 +199,6 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.2)
-  font-awesome-sass
   haml (~> 4.0, >= 4.0.7)
   jbuilder (~> 2.5)
   jquery-rails
@@ -205,6 +207,7 @@ DEPENDENCIES
   pg
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rails_12factor
   sass-rails (~> 5.0)
   simple_form (~> 3.3, >= 3.3.1)
   spring
